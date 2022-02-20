@@ -1,0 +1,1 @@
+# Dominando Entity Framework Core - Sobrescrevendo comportamentos do EF Core
