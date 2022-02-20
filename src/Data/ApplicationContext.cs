@@ -1,5 +1,6 @@
 ﻿using EFCore.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace EFCore.Data
         {
             optionsBuilder.LogTo(Console.WriteLine)
                           .UseSqlServer("Server=DESKTOP-B76722G\\SQLEXPRESS; Database=SobrescrevendoComportamentoEFCore; User ID=developer; Password=dev*10; Integrated Security=True;")
+                          .ReplaceService<IQuerySqlGeneratorFactory, MySqlServerQuerySqlGeneratorFactory>()
                           .EnableSensitiveDataLogging();
         }
     }
