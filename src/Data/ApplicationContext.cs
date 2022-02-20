@@ -16,9 +16,9 @@ namespace EFCore.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.LogTo(Console.WriteLine)
+            optionsBuilder//.LogTo(Console.WriteLine)
                           .UseSqlServer("Server=DESKTOP-B76722G\\SQLEXPRESS; Database=SobrescrevendoComportamentoEFCore; User ID=developer; Password=dev*10; Integrated Security=True;")
-                          .ReplaceService<IQuerySqlGeneratorFactory, MySqlServerQuerySqlGeneratorFactory>()
+                          //.ReplaceService<IQuerySqlGeneratorFactory, MySqlServerQuerySqlGeneratorFactory>()
                           .EnableSensitiveDataLogging();
         }
     }

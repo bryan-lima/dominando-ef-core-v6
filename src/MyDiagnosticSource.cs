@@ -34,6 +34,8 @@ namespace EFCore
                 if (!command.CommandText.Contains("WITH (NOLOCK)"))
                 {
                     command.CommandText = _tableAliasRegex.Replace(command.CommandText, "${tableAlias} WITH (NOLOCK)");
+
+                    Console.WriteLine(command.CommandText);
                 }
             }
         }
